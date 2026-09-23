@@ -1,0 +1,43 @@
+# Secrets -- never commit a real key
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging
+build/
+dist/
+*.egg-info/
+src/*.egg-info/
+*.egg
+MANIFEST
+
+# Environments
+.venv/
+venv/
+env/
+
+# Tooling caches and reports
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Runtime data from the folder-watch intake
+inbox/
+extracted/
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

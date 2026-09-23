@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose new extraction coverage, a provider, or an integration.
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Vocabulary (new product category, colors, materials, decorations)
+        - Extraction logic (a phrasing that is not handled)
+        - Output contract (a field that downstream automation needs)
+        - LLM provider
+        - Intake (a new mail source)
+        - Downstream integration (Sage, ERP, CRM)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem?
+      description: The customer email, or the downstream step, that is not served today.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: >
+        For extraction changes, show the email and the JSON you would expect.
+        Remember the project rule: never invent information the customer did not
+        provide — an empty field is a valid answer.
+    validations:
+      required: true

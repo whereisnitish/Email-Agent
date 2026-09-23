@@ -1,0 +1,144 @@
+[
+  {
+    "email_id": "msg_1001",
+    "from": "customer@example.com",
+    "subject": "Need some tumblers for our event",
+    "received_at": "2026-09-23",
+    "body": "Hey John, we need around 150 tumblers for our event next month. Looking for something black or dark blue, preferably stainless steel. Budget is around $15 each. If you can find something similar to the one we ordered last time that would be great. Need them delivered by Oct 20. Thanks!"
+  },
+  {
+    "email_id": "msg_1002",
+    "from": "customer@example.com",
+    "subject": "tumblers",
+    "received_at": "2026-09-23",
+    "body": "Hey, can you find me about 150 black stainless tumblers, something close to what we got last time? Trying to stay under 15 bucks each. We need these before the 20th."
+  },
+  {
+    "email_id": "msg_1003",
+    "from": "buyer@acme.com",
+    "subject": "quick question",
+    "received_at": "2026-09-23",
+    "body": "Can you send me pricing for 200 polos and also check if you have 100 hats available?"
+  },
+  {
+    "email_id": "msg_1004",
+    "from": "mike@brightlabs.io",
+    "subject": "hoodies",
+    "received_at": "2026-09-23",
+    "body": "Hey John, can you hook me up with about 100 black hoodies? Nothing fancy, just something comfortable for the team."
+  },
+  {
+    "email_id": "msg_1005",
+    "from": "orders@westfieldschools.org",
+    "subject": "tees",
+    "received_at": "2026-09-23",
+    "body": "Need 250 pcs tees, XL mostly, delivery ASAP. Screen print, one color front. Budget under $8/ea."
+  },
+  {
+    "email_id": "msg_1006",
+    "from": "dana@northstar.co",
+    "subject": "pricing?",
+    "received_at": "2026-09-23",
+    "body": "Need 150 tumbelers in black. Can u check pricing?"
+  },
+  {
+    "email_id": "msg_1007",
+    "from": "events@harborview.com",
+    "subject": "upcoming event",
+    "received_at": "2026-09-23",
+    "body": "We're doing an event next month and were thinking maybe 200 bottles, nothing too expensive. Would love your thoughts on what works well."
+  },
+  {
+    "email_id": "msg_1008",
+    "from": "procurement@vertexgroup.com",
+    "subject": "conference giveaways",
+    "received_at": "2026-09-23",
+    "body": "For the conference we'll need around 100-150 pieces of the drawstring bags, navy blue if possible. Trying to keep these under 20 bucks each. In hand by Nov 5 please."
+  },
+  {
+    "email_id": "msg_1009",
+    "from": "sarah@lakesidehr.com",
+    "subject": "onboarding kits",
+    "received_at": "2026-09-23",
+    "body": "Hi! We need 100 polos, 200 tumblers and maybe 50 backpacks for new hire kits. Everything embroidered with our logo, and we need it all delivered by Dec 1. Let me know rough pricing when you can."
+  },
+  {
+    "email_id": "msg_1010",
+    "from": "info@communityfirst.org",
+    "subject": "event swag",
+    "received_at": "2026-09-23",
+    "body": "Can you find us some good promotional products for our event?"
+  },
+  {
+    "email_id": "msg_1011",
+    "from": "purchasing@delta-mfg.com",
+    "subject": "Re: PO 44821",
+    "received_at": "2026-09-23",
+    "body": "Any update on my order? PO 44821 was supposed to ship last week and I haven't seen tracking yet. Customer is asking."
+  },
+  {
+    "email_id": "msg_1012",
+    "from": "purchasing@delta-mfg.com",
+    "subject": "Re: order 44900 change",
+    "received_at": "2026-09-23",
+    "body": "Quick change to our order 44900 - instead of 200 polos can we make it 300? Same colors, everything else stays the same."
+  },
+  {
+    "email_id": "msg_1013",
+    "from": "karen@summitdental.com",
+    "subject": "problem with our shipment",
+    "received_at": "2026-09-23",
+    "body": "We received the mugs today and about 40 of them arrived damaged - cracked handles. This is the second time. We need a replacement shipment or a refund."
+  },
+  {
+    "email_id": "msg_1014",
+    "from": "newclient@pinnacle.co",
+    "subject": "question before we order",
+    "received_at": "2026-09-23",
+    "body": "What's your typical lead time and do you have a minimum order quantity? Also what are your payment terms?"
+  },
+  {
+    "email_id": "msg_1015",
+    "from": "customer@example.com",
+    "subject": "Re: Spring order follow-up",
+    "received_at": "2026-09-23",
+    "body": "Hi John, following up on the thread below - let's do the same tumblers again, 200 this time. Keep the same imprint. Need them by Oct 30.",
+    "thread": [
+      {
+        "email_id": "msg_0990",
+        "from": "john@distributor.com",
+        "subject": "Spring order follow-up",
+        "received_at": "2026-03-14",
+        "body": "Hi, confirming your March order: 150 stainless steel tumblers in black, laser engraved with your logo, at $14.80 each on PO 41203. Delivered 2026-03-28."
+      },
+      {
+        "email_id": "msg_0991",
+        "from": "customer@example.com",
+        "subject": "Re: Spring order follow-up",
+        "received_at": "2026-03-15",
+        "body": "Perfect, they looked great. We'll likely reorder in the fall."
+      }
+    ]
+  },
+  {
+    "email_id": "msg_1016",
+    "from": "gala@rivertownfoundation.org",
+    "subject": "gala gifts - two things",
+    "received_at": "2026-09-23",
+    "body": "Two things: can you quote 300 wine tumblers in gold for the gala, and separately do you carry recycled tote bags? Need the totes to be eco-friendly if we go that route. Gala is Nov 14 so we'd need everything a week before."
+  },
+  {
+    "email_id": "msg_1017",
+    "from": "noreply@marketingnews.example.com",
+    "subject": "Your weekly industry digest",
+    "received_at": "2026-09-23",
+    "body": "This week in promotional products: supply chain trends, new decoration techniques, and an interview with an industry veteran. Click here to read more."
+  },
+  {
+    "email_id": "msg_1018",
+    "from": "ops@fieldserviceco.com",
+    "subject": "yeti order",
+    "received_at": "2026-09-23",
+    "body": "We want to go with Yeti this time if the budget allows - 75 units, 20 oz, laser engraved. We usually order from Summit Supply but open to alternatives. Need by the 15th. Individually packaged please, they're going out as client gifts."
+  }
+]

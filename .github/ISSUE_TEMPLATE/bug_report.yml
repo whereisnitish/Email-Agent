@@ -1,0 +1,59 @@
+name: Bug report
+description: An email is extracted incorrectly, or something crashes.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. The most useful bug here is **an email that
+        extracts wrongly** — please include the text so it can become a test case.
+
+  - type: textarea
+    id: email
+    attributes:
+      label: The email
+      description: >
+        The body text (redact anything sensitive — substitute names, but keep the
+        phrasing and numbers intact, since phrasing is what the extractor reads).
+      render: text
+      placeholder: "Hey John, we need around 150 tumblers for our event next month..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What you got
+      description: "Output of `email-intent --text \"...\" --format full`"
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: Which field should have held which value, and why.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Provider
+      options:
+        - heuristic (no LLM / offline rule engine)
+        - groq
+        - gemini
+        - openrouter
+        - ollama
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version and Python
+      placeholder: "email-intent 1.0.0, Python 3.12, Windows 11"
+    validations:
+      required: true

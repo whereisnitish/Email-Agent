@@ -1,0 +1,41 @@
+# Two ways to run the extractor. Both work with no API key -- the offline rule
+# engine handles every email; adding a key to .env upgrades the same service.
+#
+#   docker compose up extractor          # webhook on :8080
+#   docker compose --profile watch up    # also watch ./inbox for new emails
+
+services:
+  extractor:
+    build: .
+    image: email-intent:latest
+    container_name: email-intent
+    ports:
+      - "8080:8080"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PORT: 8080
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8080/health', timeout=2).status == 200 else 1)"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # Folder intake: drop an email JSON into ./inbox, read the result from
+  # ./extracted. Stands in for a scheduled IMAP/Graph poller.
+  watcher:
+    build: .
+    image: email-intent:latest
+    container_name: email-intent-watcher
+    profiles: ["watch"]
+    command: ["email-intent-server", "--watch", "/data/inbox", "--output", "/data/extracted"]
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./inbox:/data/inbox
+      - ./extracted:/data/extracted
+    restart: unless-stopped

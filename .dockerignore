@@ -1,0 +1,15 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.env
+dist
+build
+*.egg-info
+extracted
+inbox
+htmlcov
+.coverage
+.ruff_cache
+.mypy_cache

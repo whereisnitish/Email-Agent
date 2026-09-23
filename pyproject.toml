@@ -1,0 +1,134 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "email-intent"
+version = "1.0.0"
+description = "Turn unstructured customer emails into structured purchasing requirements."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+    "email", "intent-extraction", "nlp", "llm", "structured-output",
+    "automation", "procurement", "promotional-products", "sage",
+]
+authors = [{ name = "Rishab Sharma", email = "rishab.sharma@mediossolutions.com" }]
+maintainers = [{ name = "Rishab Sharma", email = "rishab.sharma@mediossolutions.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Communications :: Email",
+    "Topic :: Office/Business",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+
+# Runtime deliberately has zero third-party dependencies: the standard library
+# covers HTTP, JSON and text processing, so the package installs anywhere and
+# has no supply-chain surface.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "build>=1.2",
+    "coverage>=7.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/rishab-sharma/email-intent"
+Repository = "https://github.com/rishab-sharma/email-intent"
+Issues = "https://github.com/rishab-sharma/email-intent/issues"
+Changelog = "https://github.com/rishab-sharma/email-intent/blob/main/CHANGELOG.md"
+
+[project.scripts]
+email-intent = "email_intent.cli:main"
+email-intent-server = "email_intent.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+email_intent = ["py.typed", "data/*.json"]
+
+
+# ---------------------------------------------------------------------------
+# Lint
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "W",    # warnings
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "C4",   # comprehensions
+    "SIM",  # simplify
+    "BLE",  # blind except - must be justified in-line
+    "N",    # pep8-naming
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",    # line length is handled by the formatter, not enforced hard
+    "B008",    # function calls in argument defaults (argparse patterns)
+    "RUF012",  # mutable class attrs need ClassVar - noisy for handler classes
+    "SIM108",  # ternary-instead-of-if hurts readability in the parsers
+]
+
+[tool.ruff.lint.per-file-ignores]
+# The test module puts src/ on sys.path before importing the package.
+"tests/*" = ["E402"]
+# textutil normalises smart quotes, en/em dashes and non-breaking spaces, so it
+# necessarily contains the very characters RUF001 warns about.
+"src/email_intent/textutil.py" = ["RUF001"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["email_intent"]
+
+
+# ---------------------------------------------------------------------------
+# Types
+# ---------------------------------------------------------------------------
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src/email_intent"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+
+
+# ---------------------------------------------------------------------------
+# Coverage
+# ---------------------------------------------------------------------------
+
+[tool.coverage.run]
+source = ["src/email_intent"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
